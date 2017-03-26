@@ -22,6 +22,8 @@
 </template>
 
 <script>
+  import  UserForm from '../../component/user/Form.vue'
+
   export default {
     data () {
       return {
@@ -85,6 +87,9 @@
       changePage () {
           console.info("数据发生了改变")
         this.tableData = this.data();
+      },
+      components: {
+          UserForm
       }
     }
   }

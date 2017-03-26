@@ -30,7 +30,7 @@
     .layout-header{
         height: 60px;
         background: #fff;
-     
+
     }
     .layout-logo-left{
         width: 90%;
@@ -66,7 +66,7 @@
     padding: 14px;
 }
 
- 
+
 </style>
 <template>
     <div class="layout" :class="{'layout-hide-text': spanLeft < 5}">
@@ -75,9 +75,9 @@
                 <Menu :mode="modeType" theme="dark" width="auto" :activeName="this.$route.path" :openNames="['2']" accordion @on-select="menuSelect">
                      <div class="layout-logo-left">
                          <Icon type="paper-airplane" :size="logoSize" v-show="logoIsDisplay"></Icon>
-                         <span class="layout-text"> Admin 管理系统</span>
+                         <span class="layout-text">基础权限管理系统</span>
                      </div>
-                   <template v-for="(item,index) in $router.options.routes" v-if="!item.hidden">  
+                   <template v-for="(item,index) in $router.options.routes" v-if="!item.hidden">
                         <Submenu :name="index" v-if="!item.leaf">
                             <template slot="title">
                                 <Icon :type="item.iconCls" :size="iconSize"></Icon>
@@ -92,14 +92,7 @@
                                  <Icon :type="item.iconCls" :size="iconSize"></Icon>
                                 <span class="layout-text" >{{item.children[0].name}}</span>
                             </Menu-item>
-                        </template>  
-                        <!-- <Submenu :name="index" v-if="item.leaf&&item.children.length>0">
-                            <template slot="title">
-                                    <Icon type="ios-navigate" :size="iconSize"></Icon>
-                                    <span class="layout-text">{{item.children[0].name}}</span>
-                               <Menu-item :name="item.children[0].path">{{item.children[0].name}}</Menu-item>
-                            </template>
-                        </Submenu>-->
+                        </template>
                    </template>
                 </Menu>
             </i-col>
@@ -158,7 +151,7 @@
     </Modal>
     </div>
     <!-- 修改密码 模态框 -->
-  
+
 <!-- 修改密码 模态框 -->
 </template>
 
@@ -198,7 +191,7 @@
                 }
             },
             modifyPassWord() {
-                this.modal1 = true;    
+                this.modal1 = true;
             },
             logout() {
                 this.$router.push('/login');
@@ -209,7 +202,7 @@
             menuSelect(name) {
                  this.$router.push({ path: name });
             }
-          
+
         },
         mounted(){
         }

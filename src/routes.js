@@ -1,14 +1,12 @@
 import Login from './pages/Login.vue'
 import NotFound from './pages/404.vue'
-import Home from './pages/Home.vue'
-import Main from './pages/Main.vue'
-import Table from './pages/nav1/Table.vue'
-import Form from './pages/nav1/Form.vue'
+import Home from './component/Home.vue'
+import Table from './pages/user/Table.vue'
+import Form from './pages/user/Form.vue'
 import user from './pages/nav1/user.vue'
 import Page4 from './pages/nav2/Page4.vue'
 import Page5 from './pages/nav2/Page5.vue'
-import Page6 from './pages/nav3/Page6.vue'
-import echarts from './pages/charts/echarts.vue'
+
 
 let routes = [{
         path: '/login',
@@ -26,48 +24,28 @@ let routes = [{
     {
         path: '/',
         component: Home,
-        name: '导航一',
+        name: '基础权限管理',
         iconCls: 'ios-home', //图标样式class
         children: [
-            { path: '/main', component: Main, name: '主页', hidden: true },
-            { path: '/table', component: Table, name: '表格' },
-            { path: '/form', component: Form, name: '表单' },
-            { path: '/user', component: user, name: '列表' },
+            { path: '/table', component: Table, name: '用户管理' },
+            { path: '/form', component: Form, name: '资源管理' },
+            { path: '/user', component: user, name: '授权管理' },
         ]
     },
     {
         path: '/',
         component: Home,
-        name: '导航二',
+        name: '组件管理',
         iconCls: 'ios-paw',
         children: [
-            { path: '/page4', component: Page4, name: '页面4' },
-            { path: '/page5', component: Page5, name: '页面5' }
+            { path: '/page4', component: Page4, name: '数据库字典' },
+            { path: '/page5', component: Page5, name: '图标管理' }
         ]
     },
     {
-        path: '/',
-        component: Home,
-        name: '',
-        iconCls: 'social-freebsd-devil',
-        leaf: true, //只有一个节点
-        children: [
-            { path: '/page6', component: Page6, name: '导航三' }
-        ]
-    },
-    {
-        path: '/',
-        component: Home,
-        name: 'Charts',
-        iconCls: 'stats-bars',
-        children: [
-            { path: '/echarts', component: echarts, name: 'echarts' }
-        ]
-    },
-    {
-        path: '*',
-        hidden: true,
-        redirect: { path: '/404' }
+          path: '*',
+          hidden: true,
+          redirect: { path: '/404' }
     }
 ];
 
